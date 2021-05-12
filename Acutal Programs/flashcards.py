@@ -1,5 +1,5 @@
-import random                  #get help with checking flashcard answers
-from random import randint     #get help with reviewing flashcards
+import random                  
+from random import randint     
 
 class flashcard:
     def __init__(self, word, meaning):
@@ -10,35 +10,26 @@ class flashcard:
         #we will return a string 
         return self.word+' ( '+self.meaning+' )'
         
-global deckS
+global deck
 deck = []
 print("welcome to my flashcard application")
   
-#the following loop will be repeated until
-#user stops to add the flashcards
+#Adding flashcards until stop
 while(True): 
     word = input("enter the name you want to add to flashcard : ")
     meaning = input("enter the meaning of the word : ")
       
-    flash.append(flashcard(word, meaning))
-    option = int(input("enter 0 if you want to add another flashcard, 1 to exit builder: "))
+    deck.append(flashcard(word, meaning))
+    option = int(input("enter 0 if you want to add another flashcard, 1 to start reviewing : "))
       
+
     if(option):
-        break
+        break        
           
-# printing all the flashcards 
+# printing all the flashcards that were just made
 print("\nYour flashcards")
-for i in flash:
+for i in deck:
     print(">", i)
 
-#start reviewing flash cards
-reviewtime = input(f'would you like to start studying your flashcards now? Type "y" to review: ')
-randomizer = randint(0, len(deck)-1)
-pickedcard = deck[randomizer]
-if reviewtime.lower == str(f'y'):
-    print(pickedcard)
-    random.shuffle.append(deck)
-    print(deck)
+#quiz
 
-#flashcards correct/incorrect
-while(True):
