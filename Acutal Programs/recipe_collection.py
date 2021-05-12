@@ -1,6 +1,15 @@
 import json                 #neeed to work on add fucntion!!!
 import sys                  #get help on making dict instead of json
                             #after option selected it always goes to add
+
+def write_to_jsonfile(path, fileName, data):
+    ##filepathnameWExt = './' + path = './' + fileName + '.json'
+    with open(path + fileName, 'w') as fp:
+        json.dump(data, fp) 
+
+def menu
+
+
 print('Hello welcome to my recipe book. What would you like to do today? Press "M", or type "menu" or "help" to access the menu')
 userin = input("Please enter your answer:")
 
@@ -42,25 +51,14 @@ if userin2.lower() == str(f"l"):
 
 #new recipe variables
 name = input(f"What would you like to add to the recipe book")
-ingred = input(f"What are the necessary ingredients?")
-instruc =input(f'How do you prepare this food?')
-
-
-if userin2.lower() == str(f"n"):
-    #name = input(f"What would you like to add to the recipe book")
-    #ingred = input(f"What are the necessary ingredients?")
-    #instruc =input(f'How do you prepare this food?')    
-    print(name + ' recipe added to dictionary')
-elif name == data in "recipe_collection.json": 
-    print("Recipe already exists")    
-
-
-def write_to_jsonfile(path, fileName, data):
-    ##filepathnameWExt = './' + path = './' + fileName + '.json'
-    with open(recipe_collection.json, 'w') as fp:
-        json.dump(data, fp) 
+if name == data in "recipe_collection.json": 
+    print("Recipe already exists")  
+else: 
+    ingred = input(f"What are the necessary ingredients?")
+    instruc =input(f'How do you prepare this food?')
+    data[name]={"Instructions": instruc,"Ingredients": ingred }
+    print(data)
 
 path ='./'
-fileName = 'recipe_collection.py'
-data = [json]
-data = [name]== name, [ingred]== ingred, [instruc]== instruc    
+fileName = 'recipe_collection.json'
+write_to_jsonfile(path,fileName, data)  

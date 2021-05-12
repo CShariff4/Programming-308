@@ -10,8 +10,8 @@ class flashcard:
         #we will return a string 
         return self.word+' ( '+self.meaning+' )'
         
-global flash
-flash = []
+global deckS
+deck = []
 print("welcome to my flashcard application")
   
 #the following loop will be repeated until
@@ -33,12 +33,12 @@ for i in flash:
 
 #start reviewing flash cards
 reviewtime = input(f'would you like to start studying your flashcards now? Type "y" to review: ')
-randomizer = randint(0, len(flash)-1)
-pickedcard = flash[randomizer]
+randomizer = randint(0, len(deck)-1)
+pickedcard = deck[randomizer]
 if reviewtime.lower == str(f'y'):
     print(pickedcard)
-
-    random.shuffle.append(flash)
-    print(flash)
+    random.shuffle.append(deck)
+    print(deck)
 
 #flashcards correct/incorrect
+while(True):

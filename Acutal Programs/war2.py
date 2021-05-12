@@ -1,7 +1,7 @@
 import random
 from random import shuffle
 
-
+#deck attributes
 SUITS = ['H', 'D', 'S', 'C']
 FACES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 DECK = [f + s for f in FACES for s in SUITS]
@@ -73,6 +73,6 @@ class WarCardGame:
         return False
  
 if __name__ == '__main__':
-    WG = WarCardGame()
-    while WG.flip():
+    CD = WarCardGame()
+    while CD.flip():
         continue
