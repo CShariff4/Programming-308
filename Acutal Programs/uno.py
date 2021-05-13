@@ -41,12 +41,12 @@ def showHand(player, playerHand):
     for card in playerHand:
         print('{}) {}'.format(y, card))
         y+=1
-        print("")
+    print("")
 
 #fuction to see if a player can place a card or not
 def canPlay(color, value, playerHand):
     for card in playerHand:
-        if "Wild" in Card:
+        if "Wild" in card:
             return True
         elif color in card or value in card:
             return True
