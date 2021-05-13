@@ -42,7 +42,8 @@ def showHand(player, playerHand):
         print("")
 
 #fuction to see if a player can place a card or not
-def
+def canPlay(color, value, playerHand):
+
 
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
