@@ -4,7 +4,7 @@ import random
 def buildDeck():
     deck =[]
     colors = ["Blue", "Green", "Yellow", "Red"]
-    values = ["Draw Two", "Skip", "Reverse", 0,1,2,3,4,5,6,7,8,9]
+    values = ["Draw Two", "Skip", "Reverse",0,1,2,3,4,5,6,7,8,9]
     wildcards = ["Wild", "Wild Draw Four"]
     for color in colors:
         for value in values:
@@ -22,16 +22,14 @@ def shuffleDeck(deck):
     for cardPosition in range(len(deck)):
         randPosition = random.randint(0,107)
         deck[cardPosition], deck[randPosition] = deck[randPosition], deck[cardPosition]
-        return deck
+    return deck
 
 
 def drawCards(numCards):
     cardsDrawn = []
     for x in range(numCards):
         cardsDrawn.append(unoDeck.pop(0))
-        return cardsDrawn
-
-
+    return cardsDrawn
 
 
 unoDeck = buildDeck()
