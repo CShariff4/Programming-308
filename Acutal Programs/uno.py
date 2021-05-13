@@ -19,8 +19,8 @@ def buildDeck():
 
 def shuffleDeck(deck):
     for cardPosition in range(len(deck)):
-        randPos = random.randint(0,107)
-        deck[cardPos], deck[randPos] = deck[randPos], deck[cardPos]
+        randPosition = random.randint(0,107)
+        deck[cardPosition], deck[randPosition] = deck[randPosition], deck[cardPosition]
         return deck
 
 unoDeck = buildDeck()
