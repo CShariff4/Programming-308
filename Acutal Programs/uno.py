@@ -44,6 +44,7 @@ def showHand(player, playerHand):
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
 unoDeck =shuffleDeck(unoDeck)
+discards = []
 print(unoDeck)
 
 players = []
@@ -55,6 +56,8 @@ print(players)
 
 playerTurn = 0
 playerDirection =1
+playing = True
+discards.append(unoDeck.pop(0))
 
 while playing:
     showHand(playerTurn, players[playerTurn])
