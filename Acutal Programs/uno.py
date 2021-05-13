@@ -107,16 +107,12 @@ while playing:
     elif cardVal == "Draw Two":
         players[playerTurn].extend(drawCards(2))
     elif cardVal == "Draw Four":
-        players[playerTurn].extend(drawCards(4)) 
-    else:
-        print("You cannot play. Must draw a card")
-        players[playerTurn].extend(drawCards(1))
+        players[playerTurn].extend(drawCards(4))
+    print(" ") 
+else:
+    print("You cannot play. Must draw a card")
+    players[playerTurn].extend(drawCards(1))
     print(" ")
-
-
-
-
-
 
     playerTurn += playerDirection
     if playerTurn == numPlayers:
