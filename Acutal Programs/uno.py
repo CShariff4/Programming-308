@@ -67,6 +67,11 @@ playerTurn = 0
 playerDirection =1
 playing = True
 discards.append(unoDeck.pop(0))
+splitCard = discards[0].split(" ", 1)
+currentColor = splitCard[0]
+if currentColor != "Wild":
+    cardVal = splitCard[1]
+
 
 while playing:
     showHand(playerTurn, players[playerTurn])
