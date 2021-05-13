@@ -16,7 +16,7 @@ def buildDeck():
         deck.append(wildcards[1])
     return deck
 
-
+#shuffle deck function
 def shuffleDeck(deck):
     for cardPosition in range(len(deck)):
         randPosition = random.randint(0,107)
