@@ -41,4 +41,7 @@ print(unoDeck)
 
 players = []
 numPlayers = int(input("How many players are playing today? "))
+for player in range(numPlayers):
+    players.append(drawCards(5))
 
+print(players)
