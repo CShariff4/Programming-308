@@ -37,8 +37,10 @@ def showHand(player, playerHand):
     print("Player {}".format(player+1))
     print("Your Hand")
     print("-----------")
+    y =1
     for card in playerHand:
-        print(card)
+        print('{}) {}'.format(y, card))
+        y+=1
         print("")
 
 #fuction to see if a player can place a card or not
@@ -78,4 +80,5 @@ else:
 while playing:
     showHand(playerTurn, players[playerTurn])
     print("Card on top of discard pile {}".format(discards[-1]))
-
+    if canPlay(currentColor, cardVal, players[playerTurn]):
+        cardChosen = input("Which card do you want to play? ")
