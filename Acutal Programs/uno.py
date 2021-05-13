@@ -34,7 +34,7 @@ def drawCards(numCards):
 #player is integer
 #playerHand is list
 def showHand(player, playerHand):
-    print("Player {}".format(player+1))
+    print("Player {}'s turn".format(player+1))
     print("Your Hand")
     print("-----------")
     y =1
@@ -84,10 +84,10 @@ while playing:
         cardChosen = int(input("Which card do you want to play? "))
         while not canPlay(currentColor, cardVal, [players[playerTurn][cardChosen-1]]):
             cardChosen = int(input("Not a vaild card. Please pick a different card"))
-            print("You played {}".format(players[playerTurn][cardChosen-1])
+        print("You played {}".format(players[playerTurn][cardChosen-1]))
         discards.append(players[playerTurn].pop(cardChosen-1))
     else:
         print("You cannot play. Must draw a card")
         players[playerTurn].extend(drawCards(1))
-        print(" ")
+    print(" ")
     playerTurn += playerDirection
