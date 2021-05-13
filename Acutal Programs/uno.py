@@ -39,6 +39,7 @@ def showHand(player, playerHand):
     print("-----------")
     for card in playerHand:
         print(card)
+        print("")
 
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
@@ -46,7 +47,7 @@ unoDeck =shuffleDeck(unoDeck)
 print(unoDeck)
 
 players = []
-numPlayers = int(input("How many players are playing today? "))
+numPlayers = int(input("How many players are playing today? Has to be between 2 and 4: "))
 for player in range(numPlayers):
     players.append(drawCards(5))
 
@@ -55,4 +56,5 @@ print(players)
 playerTurn = 0
 playerDirection =1
 
-
+while playing:
+    showHand(playerTurn, players[playerTurn])
