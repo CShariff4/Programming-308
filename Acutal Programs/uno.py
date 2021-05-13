@@ -86,16 +86,16 @@ while playing:
             cardChosen = int(input("Not a vaild card. Please pick a different card"))
         print("You played {}".format(players[playerTurn][cardChosen-1]))
         discards.append(players[playerTurn].pop(cardChosen-1))
-#checking for special cards
-    splitCard = discards[0].split(' ', 1)
-    currentColor = splitCard[0]
-    if len(splitCard) == 1:
-        cardVal = "Any"
-    else: 
-        cardVal = splitCard[1]
-    if currentColor == "Wild":
-        for z in range(len(colors)):
-            print("{}) {}".format(z+1, colors[z]))
+        #checking for special cards
+        splitCard = discards[0].split(' ', 1)
+        currentColor = splitCard[0]
+        if len(splitCard) == 1:
+            cardVal = "Any"
+        else: 
+            cardVal = splitCard[1]
+        if currentColor == "Wild":
+            for z in range(len(colors)):
+                print("{}) {}".format(z+1, colors[z]))
         newColor = int(input("Invalid option. Please pick a new color: "))    
         while newColor < 1 or newColor > 4:
             newColor = int(input("Invalid option. Please pick a new color: "))
