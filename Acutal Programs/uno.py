@@ -82,7 +82,7 @@ while playing:
     print("Card on top of discard pile {}".format(discards[-1]))
     if canPlay(currentColor, cardVal, players[playerTurn]):
         cardChosen = int(input("Which card do you want to play? "))
-        while not canPlay(currentColor, cardVal, [players[playerTurn][cardChosen-1]])
+        while not canPlay(currentColor, cardVal, [players[playerTurn][cardChosen-1]]):
             cardChosen = int(input("Not a vaild card. Please pick a different card"))
         discards.append(players[playerTurn].pop(cardChosen-1))
     else:
