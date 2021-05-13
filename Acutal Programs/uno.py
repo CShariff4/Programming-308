@@ -24,13 +24,15 @@ def shuffleDeck(deck):
         deck[cardPosition], deck[randPosition] = deck[randPosition], deck[cardPosition]
     return deck
 
-
+#draw cards function
 def drawCards(numCards):
     cardsDrawn = []
     for x in range(numCards):
         cardsDrawn.append(unoDeck.pop(0))
     return cardsDrawn
 
+
+def 
 
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
@@ -43,3 +45,8 @@ for player in range(numPlayers):
     players.append(drawCards(5))
 
 print(players)
+
+playerTurn = 0
+playerDirection =1
+
+
