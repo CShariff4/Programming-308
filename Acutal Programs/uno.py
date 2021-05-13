@@ -94,12 +94,28 @@ while playing:
 #checking for special cards
     splitCard = discards[0].split(' ', 1)
     currentColor = splitCard[0]
+    if len(splitCard) == 1:
+        cardVal = "Any"
+    else: 
+        cardVal = splitCard[1]
     if currentColor == "Wild":
         for z in range(len(colors)):
             print("{}) {}".format(z+1, colors[z]))
-        newColor = < 1 or newColor > 4:
-        newColor = int(input("Invalid option. Please pick a new color: "))
+        newColor = int(input("Invalid option. Please pick a new color: "))    
+        while newColor < 1 or newColor > 4:
+            newColor = int(input("Invalid option. Please pick a new color: "))
         currentColor = colors[newColor-1]
+
+    if cardVal == "Reverse":
+        playerDirection = playerDirection * -1
+    elif cardVal == "Skip":
+        playerTurn += playerDirection
+    elif cardVal == "Draw Two":
+        players[playerTurn].extend(drawCards(2))
+    elif cardVal == "Draw Four":
+        players[playerTurn].extend(drawCards(4))
+
+
 
 
 
