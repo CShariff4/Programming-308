@@ -1,5 +1,6 @@
 import random 
 
+#building deck function
 def buildDeck():
     deck =[]
     colors = ["Blue", "Green", "Yellow", "Red"]
