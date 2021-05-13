@@ -41,6 +41,9 @@ def showHand(player, playerHand):
         print(card)
         print("")
 
+#fuction to see if a player can place a card or not
+def
+
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
 unoDeck =shuffleDeck(unoDeck)
@@ -62,4 +65,4 @@ discards.append(unoDeck.pop(0))
 while playing:
     showHand(playerTurn, players[playerTurn])
     print("Card on top of discard pile {}".format(discards[-1]))
-    
+
