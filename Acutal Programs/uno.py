@@ -61,3 +61,5 @@ discards.append(unoDeck.pop(0))
 
 while playing:
     showHand(playerTurn, players[playerTurn])
+    print("Card on top of discard pile {}".format(discards[-1]))
+    
