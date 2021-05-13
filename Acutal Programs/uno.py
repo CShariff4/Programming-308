@@ -86,7 +86,7 @@ while playing:
         print("You played {}".format(players[playerTurn][cardChosen-1]))
         discards.append(players[playerTurn].pop(cardChosen-1))
         #checking for special cards
-        splitCard = discards[0].split(' ', 1)
+        splitCard = discards[-1].split(' ', 1)
         currentColor = splitCard[0]
         if len(splitCard) == 1:
             cardVal = "Any"
