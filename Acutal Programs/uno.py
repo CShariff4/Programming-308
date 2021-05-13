@@ -1,3 +1,5 @@
+import random 
+
 def buildDeck():
     deck =[]
     colors = ["Blue", "Green", "Yellow", "Red"]
@@ -14,4 +16,7 @@ def buildDeck():
         deck.append(wildcards[1])
     return deck
 
+
+    def shuffleDeck(deck):
+        for cardPosition in range(len(deck)):
     unoDeck = buildDeck()
