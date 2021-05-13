@@ -84,8 +84,10 @@ while playing:
         cardChosen = int(input("Which card do you want to play? "))
         while not canPlay(currentColor, cardVal, [players[playerTurn][cardChosen-1]]):
             cardChosen = int(input("Not a vaild card. Please pick a different card"))
+            print("You played {}".format(players[playerTurn][cardChosen-1])
         discards.append(players[playerTurn].pop(cardChosen-1))
     else:
         print("You cannot play. Must draw a card")
         players[playerTurn].extend(drawCards(1))
+        print(" ")
     playerTurn += playerDirection
