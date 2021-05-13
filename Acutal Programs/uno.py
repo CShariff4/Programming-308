@@ -90,6 +90,19 @@ while playing:
         print("You cannot play. Must draw a card")
         players[playerTurn].extend(drawCards(1))
     print(" ")
+
+#checking for special cards
+    splitCard = discards[0].split(' ', 1)
+    currentColor = splitCard[0]
+    if currentColor == "Wild":
+        for z in range(len(colors)):
+            print("{}) {}".format(z+1, colors[z]))
+        newColor = < 1 or newColor > 4:
+        newColor = int(input("Invalid option. Please pick a new color: "))
+        currentColor = colors[newColor-1]
+
+
+
     playerTurn += playerDirection
     if playerTurn == numPlayers:
         playerTurn = 0
