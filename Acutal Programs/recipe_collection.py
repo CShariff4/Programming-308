@@ -7,9 +7,6 @@ def write_to_jsonfile(path, fileName, data):
     with open(path + fileName, 'w') as fp:
         json.dump(data, fp) 
 
-def menu
-
-
 print('Hello welcome to my recipe book. What would you like to do today? Press "M", or type "menu" or "help" to access the menu')
 userin = input("Please enter your answer:")
 
