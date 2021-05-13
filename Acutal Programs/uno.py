@@ -91,3 +91,7 @@ while playing:
         players[playerTurn].extend(drawCards(1))
     print(" ")
     playerTurn += playerDirection
+    if playerTurn == numPlayers:
+        playerTurn = 0
+    elif playerTurn < 0:
+        playerTurn = numPlayers-1
