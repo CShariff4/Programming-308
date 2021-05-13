@@ -56,7 +56,7 @@ unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
 unoDeck =shuffleDeck(unoDeck)
 discards = []
-print(unoDeck)
+#print(unoDeck)
 
 players = []
 numPlayers = int(input("How many players are playing today? Has to be between 2 and 4: "))
@@ -86,11 +86,6 @@ while playing:
             cardChosen = int(input("Not a vaild card. Please pick a different card"))
         print("You played {}".format(players[playerTurn][cardChosen-1]))
         discards.append(players[playerTurn].pop(cardChosen-1))
-    else:
-        print("You cannot play. Must draw a card")
-        players[playerTurn].extend(drawCards(1))
-    print(" ")
-
 #checking for special cards
     splitCard = discards[0].split(' ', 1)
     currentColor = splitCard[0]
@@ -105,7 +100,6 @@ while playing:
         while newColor < 1 or newColor > 4:
             newColor = int(input("Invalid option. Please pick a new color: "))
         currentColor = colors[newColor-1]
-
     if cardVal == "Reverse":
         playerDirection = playerDirection * -1
     elif cardVal == "Skip":
@@ -113,7 +107,12 @@ while playing:
     elif cardVal == "Draw Two":
         players[playerTurn].extend(drawCards(2))
     elif cardVal == "Draw Four":
-        players[playerTurn].extend(drawCards(4))
+        players[playerTurn].extend(drawCards(4)) 
+    else:
+        print("You cannot play. Must draw a card")
+        players[playerTurn].extend(drawCards(1))
+    print(" ")
+
 
 
 
