@@ -26,5 +26,6 @@ def shuffleDeck(deck):
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
 unoDeck =shuffleDeck(unoDeck)
+print(unoDeck)
 
 unoDeck = buildDeck()
