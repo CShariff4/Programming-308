@@ -71,6 +71,8 @@ splitCard = discards[0].split(" ", 1)
 currentColor = splitCard[0]
 if currentColor != "Wild":
     cardVal = splitCard[1]
+else:
+    cardVal = "Any"
 
 
 while playing:
