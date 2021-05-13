@@ -54,7 +54,6 @@ def canPlay(color, value, playerHand):
 
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
-unoDeck =shuffleDeck(unoDeck)
 discards = []
 #print(unoDeck)
 
