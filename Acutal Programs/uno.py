@@ -81,4 +81,11 @@ while playing:
     showHand(playerTurn, players[playerTurn])
     print("Card on top of discard pile {}".format(discards[-1]))
     if canPlay(currentColor, cardVal, players[playerTurn]):
-        cardChosen = input("Which card do you want to play? ")
+        cardChosen = int(input("Which card do you want to play? "))
+        while not canPlay(currentColor, cardVal, [players[playerTurn][cardChosen-1]])
+            cardChosen = int(input("Not a vaild card. Please pick a different card"))
+        discards.append(players[playerTurn].pop(cardChosen-1))
+    else:
+        print("You cannot play. Must draw a card")
+        players[playerTurn].extend(drawCards(1))
+    playerTurn += playerDirection
