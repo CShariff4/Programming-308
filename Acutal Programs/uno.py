@@ -43,7 +43,12 @@ def showHand(player, playerHand):
 
 #fuction to see if a player can place a card or not
 def canPlay(color, value, playerHand):
-
+    for card in playerHand:
+        if "Wild" in Card:
+            return True
+        elif color in card or value in card:
+            return True
+    return False
 
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
