@@ -28,4 +28,3 @@ unoDeck =shuffleDeck(unoDeck)
 unoDeck =shuffleDeck(unoDeck)
 print(unoDeck)
 
-unoDeck = buildDeck()
