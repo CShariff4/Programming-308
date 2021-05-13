@@ -31,8 +31,14 @@ def drawCards(numCards):
         cardsDrawn.append(unoDeck.pop(0))
     return cardsDrawn
 
-
-def 
+#player is integer
+#playerHand is list
+def showHand(player, playerHand):
+    print("Player {}".format(player+1))
+    print("Your Hand")
+    print("-----------")
+    for card in playerHand:
+        print(card)
 
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
