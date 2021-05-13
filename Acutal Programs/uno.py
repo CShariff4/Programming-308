@@ -13,3 +13,5 @@ def buildDeck():
         deck.append(wildcards[0])
         deck.append(wildcards[1])
     return deck
+
+    unoDeck = buildDeck()
