@@ -39,3 +39,6 @@ unoDeck =shuffleDeck(unoDeck)
 unoDeck =shuffleDeck(unoDeck)
 print(unoDeck)
 
+players = []
+numPlayers = int(input("How many players are playing today? "))
+
