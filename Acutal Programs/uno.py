@@ -103,6 +103,10 @@ while playing:
         playerDirection = playerDirection * -1
     elif cardVal == "Skip":
         playerTurn += playerDirection
+        if playerTurn == numPlayers:
+            playerTurn = 0
+        elif playerTurn < 0:
+            playerTurn = numPlayers-1
     elif cardVal == "Draw Two":
         playerDraw = playerTurn+playerDirection
         if playerTurn == numPlayers:
