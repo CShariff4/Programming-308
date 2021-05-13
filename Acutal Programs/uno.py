@@ -24,6 +24,16 @@ def shuffleDeck(deck):
         deck[cardPosition], deck[randPosition] = deck[randPosition], deck[cardPosition]
         return deck
 
+
+def drawCards(numCards):
+    cardsDrawn = []
+    for x in range(numCards):
+        cardsDrawn.append(unoDeck.pop(0))
+        return cardsDrawn
+
+
+
+
 unoDeck = buildDeck()
 unoDeck =shuffleDeck(unoDeck)
 unoDeck =shuffleDeck(unoDeck)
