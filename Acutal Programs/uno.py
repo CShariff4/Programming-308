@@ -104,17 +104,28 @@ while playing:
     elif cardVal == "Skip":
         playerTurn += playerDirection
     elif cardVal == "Draw Two":
+        playerDraw = playerTurn+playerDirection
+        if playerTurn == numPlayers:
+            playerTurn = 0
+        elif playerTurn < 0:
+            playerTurn = numPlayers-1
         players[playerTurn].extend(drawCards(2))
+        print(' ')
     elif cardVal == "Draw Four":
+        playerDraw = playerTurn+playerDirection
+        if playerTurn == numPlayers:
+            playerTurn = 0
+        elif playerTurn < 0:
+            playerTurn = numPlayers-1
         players[playerTurn].extend(drawCards(4))
-    print(" ") 
-else:
-    print("You cannot play. Must draw a card")
-    players[playerTurn].extend(drawCards(1))
-    print(" ")
+        print(" ") 
+    else:
+        print("You cannot play. Must draw a card")
+        players[playerTurn].extend(drawCards(1))
+        print(" ")
 
     playerTurn += playerDirection
-    if playerTurn == numPlayers:
+    if playerTurn >= numPlayers:
         playerTurn = 0
     elif playerTurn < 0:
         playerTurn = numPlayers-1
