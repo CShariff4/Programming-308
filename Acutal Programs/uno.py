@@ -23,7 +23,8 @@ def shuffleDeck(deck):
         deck[cardPos], deck[randPos] = deck[randPos], deck[cardPos]
         return deck
 
-
-
+unoDeck = buildDeck()
+unoDeck =shuffleDeck(unoDeck)
+unoDeck =shuffleDeck(unoDeck)
 
 unoDeck = buildDeck()
