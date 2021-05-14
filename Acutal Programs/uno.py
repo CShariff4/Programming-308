@@ -3,9 +3,10 @@ import random
 #building deck function
 def buildDeck():
     deck =[]
+    global colors
     colors = ["Blue", "Green", "Yellow", "Red"]
     values = ["Draw Two", "Skip", "Reverse",0,1,2,3,4,5,6,7,8,9]
-    wildcards = ["Wild", "Wild Draw Four"]
+    wild = ["Wild", "Wild Draw Four"]
     for color in colors:
         for value in values:
             cardvalue = "{} {}".format(color,value)
@@ -13,8 +14,8 @@ def buildDeck():
             if value != 0:
                 deck.append(cardvalue)
     for i in range(4):
-        deck.append(wildcards[0])
-        deck.append(wildcards[1])
+        deck.append(wild[0])
+        deck.append(wild[1])
     return deck
 
 #shuffle deck function
@@ -65,7 +66,7 @@ for player in range(numPlayers):
 print(players)
 
 playerTurn = 0
-playerDirection =1
+playerDirection = 1
 playing = True
 discards.append(unoDeck.pop(0))
 splitCard = discards[0].split(" ", 1)
@@ -77,59 +78,65 @@ else:
 
 
 while playing:
-    showHand(playerTurn, players[playerTurn])
-    print("Card on top of discard pile {}".format(discards[-1]))
-    if canPlay(currentColor, cardVal, players[playerTurn]):
+    showHand(playerTurn,players[playerTurn])
+    print("Card on top of discard pile: {}".format(discards[-1]))
+    if canPlay(currentColor, cardVal,players[playerTurn]):
         cardChosen = int(input("Which card do you want to play? "))
-        while not canPlay(currentColor, cardVal, [players[playerTurn][cardChosen-1]]):
-            cardChosen = int(input("Not a vaild card. Please pick a different card"))
+        while not canPlay(currentColor, cardVal,[players[playerTurn][cardChosen-1]]):
+            cardChosen = int(input("Invalid option. Please pick again: "))
         print("You played {}".format(players[playerTurn][cardChosen-1]))
         discards.append(players[playerTurn].pop(cardChosen-1))
-        #checking for special cards
-        splitCard = discards[-1].split(' ', 1)
-        currentColor = splitCard[0]
-        if len(splitCard) == 1:
-            cardVal = "Any"
-        else: 
-            cardVal = splitCard[1]
-        if currentColor == "Wild":
-            for z in range(len(colors)):
-                print("{}) {}".format(z+1, colors[z]))
-        newColor = int(input("Invalid option. Please pick a new color: "))    
-        while newColor < 1 or newColor > 4:
-            newColor = int(input("Invalid option. Please pick a new color: "))
-        currentColor = colors[newColor-1]
-    if cardVal == "Reverse":
-        playerDirection = playerDirection * -1
-    elif cardVal == "Skip":
-        playerTurn += playerDirection
-        if playerTurn == numPlayers:
-            playerTurn = 0
-        elif playerTurn < 0:
-            playerTurn = numPlayers-1
-    elif cardVal == "Draw Two":
-        playerDraw = playerTurn+playerDirection
-        if playerTurn == numPlayers:
-            playerTurn = 0
-        elif playerTurn < 0:
-            playerTurn = numPlayers-1
-        players[playerTurn].extend(drawCards(2))
-        print(' ')
-    elif cardVal == "Draw Four":
-        playerDraw = playerTurn+playerDirection
-        if playerTurn == numPlayers:
-            playerTurn = 0
-        elif playerTurn < 0:
-            playerTurn = numPlayers-1
-        players[playerTurn].extend(drawCards(4))
-        print(" ") 
+        
+#Checkinng for winner
+        if len(players[playerTurn]) == 0:
+            playing = False
+            winner = "Player {}".format(playerTurn+1)        
+        else:
+            splitCard = discards[-1].split(' ', 1)
+            currentColor = splitCard[0]
+            if len(splitCard) == 1:
+                cardVal = "Any"
+            else: 
+                cardVal = splitCard[1]
+            if currentColor == "Wild":
+                for z in range(len(colors)):
+                    print("{}) {}".format(z+1, colors[z]))
+                newColor = int(input("What color would you like to choose? "))    
+                while newColor < 1 or newColor > 4:
+                    newColor = int(input("Invalid option. Please pick a new color: "))
+            currentColor = colors[newColor-1]
+        if cardVal == "Reverse":
+            playerDirection = playerDirection * -1
+        elif cardVal == "Skip":
+            playerTurn += playerDirection
+            if playerTurn == numPlayers:
+                playerTurn = 0
+            elif playerTurn < 0:
+                playerTurn = numPlayers-1
+        elif cardVal == "Draw Two":
+            playerDraw = playerTurn+playerDirection
+            if playerTurn == numPlayers:
+                playerTurn = 0
+            elif playerTurn < 0:
+                playerTurn = numPlayers-1
+            players[playerTurn].extend(drawCards(2))
+        elif cardVal == "Draw Four":
+            playerDraw = playerTurn+playerDirection
+            if playerTurn == numPlayers:
+                playerTurn = 0
+            elif playerTurn < 0:
+                playerTurn = numPlayers-1
+                players[playerTurn].extend(drawCards(4))
+            print(" ") 
     else:
         print("You cannot play. Must draw a card")
         players[playerTurn].extend(drawCards(1))
-        print(" ")
 
     playerTurn += playerDirection
     if playerTurn >= numPlayers:
         playerTurn = 0
     elif playerTurn < 0:
         playerTurn = numPlayers-1
+
+print("Game Over")
+print("{} is the winner".format(winner))
