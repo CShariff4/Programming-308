@@ -1,1 +1,1 @@
-Uno is functional to the end of the game. There is a bug that happens occasionally where it only lets you pick the last card you have in your hand. However it still runs. Enjoy!
+#Uno is functional to the end of the game. There is a bug that happens occasionally where it only lets you pick the last card you have in your hand. However it still runs. Enjoy!
